@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
 
-    "start": "node index.js",
-    "server": "NODE_ENV=production node index.js",
+    "start": "node server.js",
+    "server": "NODE_ENV=production node server.js",
     "dev": "concurrently \"cd ../website && npm run dev \" \" npm run start\"",
-    "build": "NODE_ENV=production node index.js"
+    "build": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
