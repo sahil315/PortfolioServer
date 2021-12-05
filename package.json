@@ -6,7 +6,7 @@
   "proxy": "http://localhost:3000",
   "scripts": {
 
-    "start": "NODE_ENV=production node index.js",
+    "start": "node index.js",
     "server": "NODE_ENV=production node index.js",
     "dev": "concurrently \"cd ../website && npm run dev \" \" npm run start\"",
     "build": "NODE_ENV=production node index.js"
