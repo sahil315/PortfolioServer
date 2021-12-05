@@ -16,7 +16,7 @@ const mongoString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_P
 mongoose.connect(mongoString, {useNewUrlParser: true, useUnifiedTopology: true})
 
 mongoose.connection.on("error", function(error) {
-  if (process.env.NODE_ENV === "development") {
+  if (process.env.NODE_ENV === "production") {
     console.log(error)
   }
 })
