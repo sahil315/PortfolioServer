@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(process.env.PORT, function () {
-  console.log(`Express app listening on port ${PORT}`)
+  console.log(`Express app listening on port ${process.env.PORT}`)
 })
 
 
