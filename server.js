@@ -13,12 +13,14 @@ const app = express()
 app.use(helmet())
 
 app.use(require("./routes/index.js"))
-app.get('/', (req, res) => {
-  res.send("hello world")
-})
+
 
 app.listen(process.env.PORT, function () {
   console.log(`Express app listening on port ${process.env.PORT}`)
+
+})
+app.get('/', (req, res) => {
+  res.send("hello world")
 })
 
 
