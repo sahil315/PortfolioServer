@@ -38,9 +38,7 @@ app.listen(PORT, function () {
   console.log(`Express app listening on port ${PORT}`)
 })
 app.get("/", function(req, res) {
-  api.getAllBlogPosts(function(apiResponse) {
-    res.json(apiResponse)
-  })
+  res.send("hello world")
 })
 
 
