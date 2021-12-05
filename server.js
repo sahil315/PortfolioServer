@@ -7,9 +7,20 @@ const dotenv = require("dotenv")
 dotenv.config() 
 
 
-const PORT = process.env.PORT
+// const PORT = process.env.PORT
 
 const app = express()
+app.use(helmet())
+
+app.use(require("./routes/index.js"))
+app.get('/', (req, res) => {
+  res.send("hello world")
+})
+
+app.listen(process.env.PORT, function () {
+  console.log(`Express app listening on port ${PORT}`)
+})
+
 
 const mongoString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.uooen.mongodb.net/My_Blog?retryWrites=true&w=majority`
 
@@ -31,14 +42,14 @@ mongoose.connection.on("open", function() {
 // });
 
 
-app.use(helmet())
+// app.use(helmet())
 
-app.use(require("./routes/index.js"))
-app.listen(PORT, function () {
-  console.log(`Express app listening on port ${PORT}`)
-})
-app.get("/", function(req, res) {
-  res.send("hello world")
-})
+// app.use(require("./routes/index.js"))
+// app.listen(PORT, function () {
+//   console.log(`Express app listening on port ${PORT}`)
+// })
+// app.get("/", function(req, res) {
+//   res.send("hello world")
+// })
 
 
