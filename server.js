@@ -28,7 +28,9 @@ mongoose.connection.on("open", function() {
 app.use(helmet())
 
 app.use(require("./routes/index.js"))
-
+app.get(req,res) => {
+    res.send("hello");
+}
 
 app.listen(process.env.PORT, function () {
   console.log(`Express app listening on port ${PORT}`)
