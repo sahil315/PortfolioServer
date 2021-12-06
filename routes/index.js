@@ -7,7 +7,7 @@ const app = express.Router()
 // API ENDPOINT CODE WILL GO HERE
 
 app.get("/", function(req, res) {
-  res.send("hello")
+  res.send(apiResponse)
     api.getAllBlogPosts(function(apiResponse) {
       res.json(apiResponse)
     })
